@@ -31,7 +31,9 @@ def checking_model_service():
                 ready = True
             elif request_ollama.status_code == 200:
                 server = "Ollama"
-                ready = True        
+                ready = True
+            else:
+                print(f"response cpp: {request_cpp.status_code} content: {request_cpp.content}")
         except:
             pass
         time.sleep(1)
